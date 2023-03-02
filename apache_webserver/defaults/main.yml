@@ -1,0 +1,4 @@
+---
+# defaults file for apache_webserver
+test_message: "Welcome to the Apache Webserver"
+web_dir: ansibledemo

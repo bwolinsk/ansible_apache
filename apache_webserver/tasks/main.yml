@@ -5,6 +5,12 @@
     name: httpd
     state: latest
 
+- name: Install requests python package
+  pip:
+    name: requests
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+
 - name: Create a new directory for Ansible demo website files
   ansible.builtin.file:
     path: "{{ web_dir }}"

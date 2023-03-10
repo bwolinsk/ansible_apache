@@ -4,7 +4,11 @@
   ansible.builtin.yum:
     name: httpd
     state: latest
-
+- Install firewall for python interpreter
+  pip:
+    name: firewall
+    become: yes
+    
 - name: Create a new directory for Ansible demo website files
   ansible.builtin.file:
     path: "{{ web_dir }}"
@@ -22,10 +26,10 @@
     state: started
   notify: Restart httpd
 
-#- name: Open firewall port
-#  ansible.posix.firewalld:
-#    service: http
-#    state: enabled
-#    immediate: true
-#    permanent: true
+- name: Open firewall port
+  ansible.posix.firewalld:
+    service: http
+    state: enabled
+    immediate: true
+    permanent: true
 

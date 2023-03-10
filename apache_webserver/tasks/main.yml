@@ -4,8 +4,9 @@
   ansible.builtin.yum:
     name: httpd
     state: latest
+
 - Install firewall for python interpreter
-  pip:
+  ansible.builtin.pip:
     name: firewall
     become: yes
     
